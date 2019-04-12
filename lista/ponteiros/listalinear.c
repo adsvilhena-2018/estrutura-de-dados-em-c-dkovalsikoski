@@ -41,9 +41,30 @@ void insere_inicio(Lista *lista, int valor){
         list->inicio=novoNo;
     }
 }
+void insere_fim(Lista *lista, int valor){
+    if(list->inicio==NULL){
+        insere_lista_vazia(list,valor)
+    } else {
+        //aloca o novo nó
+        no *novoNo = malloc(sizeof(no));
+        novoNo->prox=NULL;
+        novoNo->valor = valor;
+        //cria um ponteiro de verificção que aponta para o inicio da lista
+        no *tmp = list->prox;
+        while(tmp->prox!=NULL){
+            //enquanto a parada aqui não for nula ele percorre
+            tmp=tmp->prox;
+            if(tmp->prox==NULL){
+                list->fim->prox=novoNo;
+                list-fim = novoNo;
+            }
+        }
+    }
+}
 
 
 int main()
 {
 
+    return 0;
 }
