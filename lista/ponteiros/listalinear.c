@@ -56,7 +56,7 @@ void insere_fim(Lista *lista, int valor){
             tmp=tmp->prox;
             if(tmp->prox==NULL){
                 list->fim->prox=novoNo;
-                list-fim = novoNo;
+                list->fim = novoNo;
             }
         }
     }
