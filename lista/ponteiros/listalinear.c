@@ -41,14 +41,9 @@ void insere_inicio(Lista *lista, int valor){
         list->inicio=novoNo;
     }
 }
-void insere_fim(Lista *lista, int valor){
-    if(list->inicio==NULL){
-        insere_lista_vazia(list,valor)
-    }
-}
 
 
 int main()
 {
-    return 0;
+
 }
