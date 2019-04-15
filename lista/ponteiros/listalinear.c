@@ -63,6 +63,28 @@ void insere_fim(lista *lista, int valor){
     }
 }
 
+void insere_meio(lista *lista, int index, int valor){
+    no * novoNo = malloc(sizeof(no));
+    int contador=1;
+    no *tmp = lista->inicio->prox;
+    while (tmp->prox != NULL){
+        contador++;
+    }
+    if(index>0 && index<=contador){
+        if(index==1){
+            insere_inicio(lista, valor);
+        } else {
+            no *atual = lista->inicio->prox;
+            no *anterior = lista;
+            for(int i = 1, i<=index, i++){
+                anterior=atual;
+                atual = atual->prox;
+            }
+            anterior->prox=novoNo;
+            novoNo->prox=atual;
+        }
+    }
+}
 
 
 void imprime_lista(lista lista){
@@ -82,6 +104,7 @@ int main()
     insere_inicio(&lista, 3);
     insere_inicio(&lista,4);
     insere_fim(&lista, 7);
+    insere_meio(&lista, 2, 5);
     imprime_lista(lista);
     return 0;
 }
